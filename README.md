@@ -110,6 +110,42 @@ Genom att dela med hundra får vi cm till m
 hur mycket cm?: 100
 100cm är 1.0m
 ```
+
+10. 
+```python
+import json
+import requests
+
+class app:
+  def convert_USD_SEK(self, number):
+    #Detta function tar in hur mycket USD och kollar hur mycket SEK det är i nätet, sedan räcknar det ut priset     
+    r = requests.get('https://free.currconv.com/api/v7/convert?apiKey=do-not-use-this-key&q=USD_SEK&compact=ultra')
+    data = r.json()
+    SEK = round(data["USD_SEK"], 2) * float(number)
+    print(f"{number} USD är {SEK} SEK")
+
+print("Genom att gånga USD med hur mycket SEK en USD är får vi hur mycket kroner det är")
+#input från användaren
+USD = input("hur mycket USD?: ")
+app.convert_USD_SEK(app, USD)
+```
+```bash
+Genom att gånga USD med hur mycket SEK en USD är får vi hur mycket kroner det är
+hur mycket USD?: 27
+27 USD är 262.44 SEK
+```
+
+11. **a)** 32.0 **b)** 14 **c)** 437
+```python
+c = input("Hur mycket Celcuis?: ")
+f = 1.8 * float(c) + 32
+
+print(f"{c} Celcuis är lika med {f} Fehrenheit")
+```
+```
+Hur mycket Celcuis?: 10
+10 Celcuis är lika med 50.0 Fehrenheit
+```
 ---
 ## bidraganded
 Pull requests är välkomna. För större ändringar, öppna en fråga först för att diskutera vad du vill ändra.
